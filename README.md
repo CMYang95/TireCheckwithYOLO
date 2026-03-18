@@ -2,16 +2,40 @@
 
 以 Ultralytics YOLOv8 進行輪胎影像的**瑕疵/狀態辨識**（偵測任務），並提供可重現的訓練與推論入口。
 
+An Ultralytics YOLOv8-based project for **tire defect/status detection**.  
+This repository focuses on reproducible training and inference entry points, while keeping large assets (datasets/weights) out of version control.
+
 ## 功能概述
 
 - **訓練**：使用自訂資料集 `Tire_dataset/tiredata.yaml` 訓練 YOLOv8 偵測模型
 - **推論**：對單張圖片/資料夾做辨識，輸出含框結果圖到 `runs/`
 - **類別**：4 類（`Aging`, `frayed`, `craked`, `Normal`）
 
+## Quick Start (English)
+
+- **Install**:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+- **Run inference (single image)**:
+
+```bash
+python predict.py --weights runs/detect/train3/weights/best.pt --source Tire_dataset/images/tire22.jpg --conf 0.2 --name predict_demo
+```
+
+- **Train**:
+
+```bash
+python train.py --data Tire_dataset/tiredata.yaml --model yolov8n.pt --epochs 50 --imgsz 640 --name detect/train_tire
+```
+
 ## 主要入口（建議使用）
 
 - **訓練**：`train.py`
 - **辨識/推論**：`predict.py`
+- **Web UI**：`app.py`（可上傳圖片做辨識）
 
 ## 安裝
 
@@ -25,6 +49,14 @@ python -m pip install -r requirements.txt
 
 - **不會上傳**：資料集 `Tire_dataset/`、訓練輸出 `runs/`、以及權重檔 `*.pt`
 - 已在 `.gitignore` 排除，避免 repo 過大/推不上去
+
+## Web App（上傳圖片辨識）
+
+```bash
+streamlit run app.py
+```
+
+- 預設權重路徑：`runs/detect/train3/weights/best.pt`（可在側邊欄更改）
 
 ## Git / GitHub（連結與上傳）
 
