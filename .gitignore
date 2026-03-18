@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+ENV/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Ultralytics / YOLO outputs
+runs/
+wandb/
+mlruns/
+
+# Datasets (do not upload)
+Tire_dataset/
+Tire_dataset/**
+Tire_dataset\**
+
+# Extra local images / samples (do not upload)
+tire/
+tire/**
+tire\**
+
+# Vendored ultralytics source (kept local, not tracked)
+ultralytics/
+ultralytics/**
+ultralytics\**
+
+# Weights / checkpoints (do not upload)
+*.pt
+*.onnx
+*.engine
+*.torchscript
+
+# Caches / generated
+*.cache
+saveimage/

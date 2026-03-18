@@ -1,0 +1,7 @@
+yolo task=detect mode=train model=yolov8n.yaml data=D:\TireCheck\Tire_dataset\tiredata.yaml epochs=200 batch=2
+
+yolo task=detect mode=train model=yolov8n.yaml data=D:\TireCheck\Tire_dataset\tiredata.yaml epochs=300 batch=2
+
+
+
+labelme2yolo --json_dir 

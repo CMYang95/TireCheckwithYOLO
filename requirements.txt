@@ -1,0 +1,6 @@
+ultralytics
+opencv-python
+pillow
+numpy
+tqdm
+# torch 需依你的 CUDA/CPU 環境安裝（Windows 建議依 PyTorch 官網指令安裝）
